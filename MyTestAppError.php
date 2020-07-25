@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-class MyTestApp extends TestCase
+class MyTestAppError extends TestCase
 {
     public function testPushAndPop()
     {
@@ -11,9 +11,9 @@ class MyTestApp extends TestCase
         array_push($stack, 'foo');
         $this->assertEquals('foo', $stack[count($stack)-1]);
 
-        $this->assertEquals(2, count($stack));
+        $this->assertEquals(1, count($stack));
 
         $this->assertEquals('foo', array_pop($stack));
-        $this->assertEquals(1, count($stack));
+        $this->assertEquals(0, count($stack));
     }
 }
